@@ -1,0 +1,51 @@
+{
+  "name": "ceri-boilerplate",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cerijs",
+  "author": {
+    "name": "Your Name",
+    "email": "Your Email"
+  },
+  "license": "MIT",
+  "main": "component.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cerijs"
+  },
+  "files": [
+    "component.js",
+    "bundle.js"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "ceri": "^1.0.0"
+  },
+  "devDependencies": {
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.12.3",
+    "gh-pages": "^0.12.0",
+    "script-runner": "^0.1.6",
+    "ceri-dev-server": "^1.0.0",
+    "ceri-compiler": "^1.0.0"
+  },
+  "keywords": [
+    "component",
+    "ceri"
+  ],
+  "readmeFilename": "README.md",
+  "scripts": {
+    "build:coffee": "coffee -c -o . src/component.coffee",
+    "build:bundle": "ceri-compiler -b component.js",
+    "build": "run-npm build:*",
+    "dev": "ceri-dev-server",
+    "watch": "ceri-dev-server --test --watch",
+    "test": "ceri-dev-server --test",
+    "preversion": "npm test",
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags && npm publish",
+    "ghpages": "ceri-dev-server --static static/ && gh-pages -d static"
+  }
+}
