@@ -1,4 +1,4 @@
-# the wrapper creates a class and calls ceri on it
+# the wrapper creates a ES5 class and calls ceri on it
 ceri = require "ceri/lib/wrapper"
 # the component
 module.exports = ceri

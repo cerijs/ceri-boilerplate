@@ -17,7 +17,6 @@ module.exports = createView
   methods:
     update: (e) -> @greeting = e.target.value
   # tests can be executed by npm run test or npm run watch, to test continuously
-  tests: (el) ->
-    describe "basic", ->
-      it "should show Hello world", ->
-        el.should.have.text "Hello world!"
+  tests: basic: ->
+    it "should show Hello world", =>
+      @should.have.text "Hello world!"
